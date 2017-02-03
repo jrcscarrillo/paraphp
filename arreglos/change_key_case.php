@@ -12,8 +12,6 @@
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -260,9 +258,138 @@
                     <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>                    
                 </div>                 
             </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="bg-danger">array_diff</h2>
+                    <p>Compares array1 against one or more other arrays and returns the values in array1 that are not present in any of the other arrays</p>
+                    <p>Returns an array containing all the entries from array1 that are not present in any of the other arrays.</p>
+                    <?php
+                    echo '<p class="text-danger">$array1 = array("blue"  => 1, "red"  => 2, "green"  => 3, "purple" => 4, "yellow");</p>';
+                    echo '<p class="text-danger">$array2 = array("green" => 5, "blue" => 1, "yellow" => 7, "cyan"   => 8);</p>';
+                    $array1 = array('blue' => 1, 'red' => 2, 'green' => 3, 'purple' => 4, 'yellow');
+                    $array2 = array('green' => 5, 'blue' => 1, 'yellow' => 7, 'cyan' => 8);
+                    echo '<hr>';
+                    $salida = array_diff($array1, $array2);
+                    echo '<p class="text-primary">$salida = array_diff($array1, $array2);</p> <br>';
+                    print_r($salida);
+                    echo '<br><br><hr>';
+
+                    ?>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>                      
+                </div>
+                <div class="col-md-4">
+                    <h2 class="bg-danger">array_fill_keys</h2>
+                    <p>(PHP 5 >= 5.2.0, PHP 7) array_fill_keys — Fill an array with values, specifying keys / Fills an array 
+                        with the value of the value parameter, using the values of the keys array as keys.</p>
+                    <p>If an associative array is used as the second parameter of array_fill_keys, then the associative array will be appended in all the values of the first array.</p>
+                    <?php
+                    echo '<p class="text-danger">$array1 = array("blue"  => 1, "red"  => 2, "green"  => 3, "purple" => 4, "yellow");</p>';
+                    echo '<p class="text-danger">$array2 = array("green" => 5, "blue" => 1, "yellow" => 7, "cyan"   => 8);</p>';
+                    $array1 = array('blue' => 1, 'red' => 2, 'green' => 3, 'purple' => 4, 'yellow');
+                    $array2 = array('green' => 5, 'blue' => 1, 'yellow' => 7, 'cyan' => 8);
+                    echo '<hr>';
+                    $salida = array_fill_keys($array1, $array2);
+                    echo '<p class="text-primary">$salida = array_fill_keys($array1, $array2);</p> <br>';
+                    print_r($salida);
+                    echo '<br><br><hr>';
+
+                    ?>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>                      
+                </div>
+                <div class="col-md-4">
+                    <h2 class="bg-danger">array_fill</h2>
+                    <p>(PHP 4 >= 4.2.0, PHP 5, PHP 7) array_fill — array_fill ( int $start_index , int $num , mixed $value )
+                        Fills an array with num entries of the value of the value parameter, keys starting at the start_index parameter.</p>
+                    <p>If an associative array is used as the second parameter of array_fill_keys, then the associative array will be appended in all the values of the first array.</p>
+                    <?php
+                    echo '<p class="text-danger">$array1 = array("blue"  => 1, "red"  => 2, "green"  => 3, "purple" => 4, "yellow");</p>';
+                    echo '<p class="text-danger">$array2 = array("green" => 5, "blue" => 1, "yellow" => 7, "cyan"   => 8);</p>';
+                    $array1 = array('blue' => 1, 'red' => 2, 'green' => 3, 'purple' => 4, 'yellow');
+                    $array2 = array('green' => 5, 'blue' => 1, 'yellow' => 7, 'cyan' => 8);
+                    echo '<hr>';
+                    $salida = array_fill_keys($array1, $array2);
+                    echo '<p class="text-primary">$salida = array_fill_keys($array1, $array2);</p> <br>';
+                    print_r($salida);
+                    echo '<br><br><hr>';
+
+                    ?>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>                      
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="bg-danger">array_filter</h2>
+                    <p>(PHP 4 >= 4.0.6, PHP 5, PHP 7)  array array_filter ( array $array [, callable $callback [, int $flag = 0 ]] )
+                        Iterates over each value in the array passing them to the callback function. 
+                        If the callback function returns true, the current value from array is returned into the result array. 
+                        Array keys are preserved.</p>
+                    <p>Flag determining what arguments are sent to callback: 
+                        ARRAY_FILTER_USE_KEY - pass key as the only argument to callback instead of the value
+                        ARRAY_FILTER_USE_BOTH - pass both value and key as arguments to callback instead of the value</p>
+                    <?php
+                    echo '<p class="text-danger">$array1 = array("blue"  => 1, "red"  => 2, "green"  => 3, "purple" => 4, "yellow");</p>';
+                    echo '<p class="text-danger">$array2 = array("green" => 5, "blue" => 1, "yellow" => 7, "cyan"   => 8);</p>';
+                    $array1 = array('blue' => 1, 'red' => 2, 'green' => 3, 'purple' => 4, 'yellow');
+                    $array2 = array('green' => 5, 'blue' => 1, 'yellow' => 7, 'cyan' => 8);
+                    echo '<hr>';
+                    $salida = array_filter($array1, function($k){ return $k == "blue"; }, ARRAY_FILTER_USE_KEY);
+                    echo '<p class="text-primary">$salida = array_filter($array1, function($k){ return $k == "blue"; }, ARRAY_FILTER_USE_KEY);</p> <br>';
+                    print_r($salida);
+                    $salida = array_filter($array2, function($v, $k){ return $k == "blue" || $v == 8; }, ARRAY_FILTER_USE_BOTH);
+                    echo '<p class="text-primary">$salida = array_filter($array2, function($v, $k){ return $k == "blue" || $v == 8; }, ARRAY_FILTER_USE_BOTH);</p> <br>';
+                    print_r($salida);
+                    echo '<br><br><hr>';
+
+                    ?>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>                     
+                </div>
+                <div class="col-md-4">
+                    <h2 class="bg-danger">array_flip</h2>
+                    <p>(PHP 4, PHP 5, PHP 7) array_flip() returns an array in flip order, i.e. keys from array become values and values from array become keys.
+                        Note that the values of array need to be valid keys, i.e. they need to be either integer or string. 
+                        A warning will be emitted if a value has the wrong type, and the key/value pair in question 
+                        will not be included in the result.
+                        If a value has several occurrences, the latest key will be used as its value, and all others will be lost.</p>
+                    <p>Returns the flipped array on success and NULL on failure.</p>
+                    <?php
+                    echo '<p class="text-danger">$array1 = array("blue"  => 1, "red"  => 2, "green"  => 3, "purple" => 4, "yellow");</p>';
+                    echo '<p class="text-danger">$array2 = array("green" => 5, "blue" => 1, "yellow" => 7, "cyan"   => 8);</p>';
+                    $array1 = array('blue' => 1, 'red' => 2, 'green' => 3, 'purple' => 4, 'yellow');
+                    $array2 = array('green' => 5, 'blue' => 1, 'yellow' => 7, 'cyan' => 8);
+                    echo '<hr>';
+                    $salida = array_flip($array1);
+                    echo '<p class="text-primary">$salida = array_flip($array1);</p> <br>';
+                    print_r($salida);
+                    echo '<br><br><hr>';
+
+                    ?>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>                     
+                </div>
+                <div class="col-md-4">
+                    <h2 class="bg-danger">array_intersect_assoc</h2>
+                    <p>(PHP 4 >= 4.3.0, PHP 5, PHP 7)array_intersect_assoc ( array $array1 , array $array2 [, array $... ] )
+                        array_intersect_assoc() returns an array containing all the values of array1 that are present in all 
+                        the arguments. Note that the keys are also used in the comparison unlike in array_intersect().</p>
+                    <p>Returns an associative array containing all the values in array1 that are present in all of the arguments.</p>
+                    <?php
+                    echo '<p class="text-danger">$array1 = array("blue"  => 1, "red"  => 2, "green"  => 3, "purple" => 4, "yellow");</p>';
+                    echo '<p class="text-danger">$array2 = array("green" => 5, "blue" => 1, "yellow" => 7, "cyan"   => 8);</p>';
+                    $array1 = array('blue' => 1, 'red' => 2, 'green' => 3, 'purple' => 4, 'yellow');
+                    $array2 = array('green' => 5, 'blue' => 1, 'yellow' => 7, 'cyan' => 8);
+                    echo '<hr>';
+                    $salida = array_intersect_assoc($array1, $array2);
+                    echo '<p class="text-primary">$salida = array_intersect_assoc($array1, $array2);</p> <br>';
+                    print_r($salida);
+                    echo '<br><br><hr>';
+
+                    ?>
+                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>                     
+                </div>
+            </div>
         </div>
         
 <hr>
-
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

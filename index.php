@@ -18,6 +18,21 @@ and open the template in the editor.
  * and open the template in the editor.
  */
 
+function cmp($a, $b)
+{
+    if (abs($a) == abs($b)) {
+        return 0;
+    }
+    return (abs($a) < abs($b)) ? -1 : 1;
+}
+
+$a=array(7,-10,13,8,4,-7.2,-12,-3.7,3.5,-9.6,6.5,-1.7,-6.2,7);
+
+usort($a, "cmp");
+
+foreach ($a as $key => $value) {
+    echo "$key: $value\n";
+}
 function distancia($arr1, $arr2) {
     $dis = 0; 
     $arr3 = [];
@@ -59,6 +74,4 @@ $val = distancia($arr1, $arr2);
 echo 'Resultado ' . ++$val;
         ?>
     </body>
-</ht
-
-ml>
+</html>
