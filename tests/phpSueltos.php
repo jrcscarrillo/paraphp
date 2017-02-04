@@ -139,10 +139,10 @@
                 <div class="col-md-4">
                     <h2 class="bg-info">Element closest to zero</h2>
                     <p>Returns the element on the array</p>
-                    
-<?php
-        echo '<p class="text-danger">$a = array(7, -10, 13, 8, 4, -7.2, -12, -3.7, 3.5, -9.6, 6.5, -1.7, -6.2, 7);</p>';
-        echo '<p class="text-primary">
+
+                    <?php
+                    echo '<p class="text-danger">$a = array(7, -10, 13, 8, 4, -7.2, -12, -3.7, 3.5, -9.6, 6.5, -1.7, -6.2, 7);</p>';
+                    echo '<p class="text-primary">
 function cmp($a, $b) {<br>
     if (abs($a) == abs($b)) {<br>
         return 0;<br>
@@ -158,71 +158,126 @@ foreach ($a as $key => $value) {<br>
     echo "$key: $value\n";<br>
 }
 echo "RESULTADO " . $a[0];<br>';
-        
-function cmp($a, $b) {
-    if (abs($a) == abs($b)) {
-        return 0;
-    }
-    return (abs($a) < abs($b)) ? -1 : 1;
-}
 
-$a = array(7, -10, 13, 8, 4, -7.2, -12, -3.7, 3.5, -9.6, 6.5, -1.7, -6.2, 7);
+                    function cmp($a, $b) {
+                        if (abs($a) == abs($b)) {
+                            return 0;
+                        }
+                        return (abs($a) < abs($b)) ? -1 : 1;
+                    }
 
-usort($a, "cmp");
+                    $a = array(7, -10, 13, 8, 4, -7.2, -12, -3.7, 3.5, -9.6, 6.5, -1.7, -6.2, 7);
 
-foreach ($a as $key => $value) {
-    echo "$key: $value\n";
-}
-echo "<hr><p>RESULTADO " . $a[0] . "</p>";
-?>
+                    usort($a, "cmp");
+
+                    foreach ($a as $key => $value) {
+                        echo "$key: $value\n";
+                    }
+                    echo "<hr><p>RESULTADO " . $a[0] . "</p>";
+                    ?>
 
                 </div>
                 <div class="col-md-4">
                     <h2 class="bg-info">Compare strings</h2>
-                    <p>The result is an array with the equal characters in two strings</p>                    
-<?php
+                    <p>The result will be a integer, an element value, a percent, or a new object.
+                        <strong class="bg-info">BASED ON ALGEBRA OF SETS </strong>Union of sets means adding two sets. Let us consider two sets A and B, then the union 
+                    of sets is represented by A U B, which means all the elements, which either belong to A or B.
+                    </p><img src="../img/union.png"><br>
+                    <p>Let us consider ‘U’ as a universal set and let ‘A’ be any subset of set ‘U’. 
+                        So ‘A’ represents a complement set, which has all the elements of set ‘U’, 
+                        which are not in set ‘A’.
+                        It can be mathematically represented as, A’ = U – A. 
+                        We can say that complement of set ‘A’ in ‘U'. </p><img src="../img/Complement.png"><br>
+                    <p>Intersection represents “AND” operation, which means the element exist in both 
+                        the sets, will belong to the intersection sets. It means that in order to 
+                        form the new set with the intersection sets ( A and B ), the new set will 
+                        have to coincide in both or more sets.</p><img src="../img/Intersection.png"><br>
+                    <p>The Cartesian product of sets A and B is defined as the Set of all the points (a, b), 
+                        where a belongs to A and b belongs to B and the Cartesian product is denoted by A X B. 
+                        The set so produced is also called the product set or the cross product. 
+                        A Cartesian product of sets is a construction to build a new set from the number of 
+                        given sets</p><img src="../img/Cartesian.gif"><br>
+                    <p>Diferencia. La diferencia entre dos conjuntos A y B es el conjunto A \ B que 
+                        contiene todos los elementos de A que no pertenecen a B.</p><img src="../img/DifferenceA.png"><br>
+                    <p>Diferencia simétrica. La diferencia simétrica entre dos conjuntos A y B es el 
+                        conjunto que contiene los elementos de A y B que no son comunes</p><img src="../img/SymmetricDifference.png"><br>
+                    <?php
 
-function distancia($arr1, $arr2) {
-    $dis = 0;
-    $arr3 = [];
-    for ($i = 0; $i < count($arr1); $i++) {
-        for ($j = 0; $j < count($arr2); $j++) {
-            if ($arr1[$i] === $arr2[$j] or $arr1[$i] == NULL) {
-                $arr3[$dis] = $arr1[$i];
-                $arr1[$i] = NULL;
-                $arr2[$j] = NULL;
-                $dis++;
-                break;
-            }
-        }
-    }
+                    function distancia($arr1, $arr2) {
+                        $dis = 0;
+                        $arr3 = [];
+                        for ($i = 0; $i < count($arr1); $i++) {
+                            for ($j = 0; $j < count($arr2); $j++) {
+                                if ($arr1[$i] === $arr2[$j] or $arr1[$i] == NULL) {
+                                    $arr3[$dis] = $arr1[$i];
+                                    $arr1[$i] = NULL;
+                                    $arr2[$j] = NULL;
+                                    $dis++;
+                                    break;
+                                }
+                            }
+                        }
 
-    for ($j = 0; $j < count($arr2); $j++) {
-        for ($i = 0; $i < count($arr1); $i++) {
-            if ($arr1[$i] == NULL or $arr2[$j] == NULL) {
-                
-            } else {
-                if ($arr2[$j] === $arr1[$i]) {
-                    $arr3[$dis] = $arr2[$j];
-                    $arr1[$i] = NULL;
-                    $arr2[$j] = NULL;
-                    $dis++;
-                    break;
-                }
-            }
-        }
-    }
-    return $dis;
-}
+                        for ($j = 0; $j < count($arr2); $j++) {
+                            for ($i = 0; $i < count($arr1); $i++) {
+                                if ($arr1[$i] == NULL or $arr2[$j] == NULL) {
+                                    
+                                } else {
+                                    if ($arr2[$j] === $arr1[$i]) {
+                                        $arr3[$dis] = $arr2[$j];
+                                        $arr1[$i] = NULL;
+                                        $arr2[$j] = NULL;
+                                        $dis++;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        return $dis;
+                    }
 
-$str1 = "boat";
-$str2 = "got";
-$arr1 = str_split($str1);
-$arr2 = str_split($str2);
+                    $str1 = "boat";
+                    $str2 = "goat";
+                    $arr1 = str_split($str1);
+                    $arr2 = str_split($str2);
 //var_dump($arr3, $arr2, $arr1); 
-$val = distancia($arr1, $arr2);
-echo 'Resultado ' . ++$val;
-?>
+                    $val = distancia($arr1, $arr2);
+                    echo 'Resultado ' . ++$val;
+                    ?>
+                    <?php
+
+                    function similarity($str1, $str2) {
+                        $len1 = strlen($str1);
+                        $len2 = strlen($str2);
+
+                        $max = max($len1, $len2);
+                        $similarity = $i = $j = 0;
+
+                        while (($i < $len1) && isset($str2[$j])) {
+                            if ($str1[$i] == $str2[$j]) {
+                                $similarity++;
+                                $i++;
+                                $j++;
+                            } elseif ($len1 < $len2) {
+                                $len1++;
+                                $j++;
+                            } elseif ($len1 > $len2) {
+                                $i++;
+                                $len1--;
+                            } else {
+                                $i++;
+                                $j++;
+                            }
+                        }
+
+                        return round($similarity / $max, 2);
+                    }
+
+                    $str1 = 'boat';
+                    $str2 = 'goat';
+
+                    echo 'Similarity: ' . (similarity($str1, $str2) * 100) . '%';
+                    ?>                    
                 </div>
             </div>
 
