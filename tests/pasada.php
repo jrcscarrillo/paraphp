@@ -11,9 +11,14 @@
 
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="../public/css/demo.css">
+        <link rel="stylesheet" href="../public/css/font-awesome.css">
+        <link rel="stylesheet" href="../public/css/sky-forms-ie8.css">
+        <link rel="stylesheet" href="../public/css/sky-forms-blue.css">
+        <link rel="stylesheet" href="../public/css/sky-forms.css">
     </head>
-    <body>
+    <body class="bg-blue" id="cuerpito">
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -28,68 +33,84 @@
 
             </div>
         </nav>        
-                <div id="navbar" class="navbar-collapse collapse">
-                    <form class="navbar-form navbar-right">
-                        <div class="form-group">
-                            <input type="text" placeholder="Email" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" placeholder="Password" class="form-control">
-                        </div>
-                        <button type="submit" class="btn btn-success">Sign in</button>
-                    </form>
-                </div><!--/.navbar-collapse -->
-        <?php
-        /*
-         * To change this license header, choose License Headers in Project Properties.
-         * To change this template file, choose Tools | Templates
-         * and open the template in the editor.
-         */
+        <div class="body">		
+            <form action="phpSueltos.php" method="post" enctype="multipart/form-data" id="sky-form" class="sky-form">
+                <header>Algebra of Sets</header>
+                <fieldset>
+                    <div class="row">
+                        <section class="col col-6">
+                            <label class="select">
+                                <select name="form_option" id="form_option">
+                                    <option value="none" selected disabled>Options</option>
+                                    <option value="String">String</option>
+                                    <option value="Array">Array</option>
+                                    <option value="Absolute">Absolute</option>
+                                    <option value="DataTable">Data Table</option>
+                                    <option value="Numeric">Numeric</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                        <section class="col col-6">
+                            <label class="select">
+                                <select name="form_filter" id="form_filter">
+                                    <option value="0" selected disabled>Filter</option>
+                                    <option value="Maximo">Max</option>
+                                    <option value="Minimo">Min</option>
+                                    <option value="Similarity">Similarity</option>
+                                    <option value="Cross">Cross</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                    </div>
+                </fieldset>
+                <fieldset>					
+                    <div class="row">
+                        <section class="col col-6">
+                            <label class="input">
+                                <i class="icon-append fa fa-user"></i>
+                                <input type="text" id="form_dato1" name="form_dato1" placeholder="String or Array or Table Name" >
+                            </label>
+                        </section>
+                        <section class="col col-6">
+                            <label class="input">
+                                <i class="icon-append fa fa-briefcase"></i>
+                                <input type="text" id="form_dato2" name="form_dato2" placeholder="String or Array or Table Name" >
+                            </label>
+                        </section>
+                    </div>
+                </fieldset>
 
-        function distancia($arr1, $arr2) {
-            $dis = 0;
-            $arr3 = [];
-            for ($i = 0; $i < count($arr1); $i++) {
-                for ($j = 0; $j < count($arr2); $j++) {
-                    if ($arr1[$i] === $arr2[$j] or $arr1[$i] == NULL) {
-                        $arr3[$dis] = $arr1[$i];
-                        $arr1[$i] = NULL;
-                        $arr2[$j] = NULL;
-                        $dis++;
-                        break;
-                    }
-                }
-            }
 
-            for ($j = 0; $j < count($arr2); $j++) {
-                for ($i = 0; $i < count($arr1); $i++) {
-                    if ($arr1[$i] == NULL or $arr2[$j] == NULL) {
-                        
-                    } else {
-                        if ($arr2[$j] === $arr1[$i]) {
-                            $arr3[$dis] = $arr2[$j];
-                            $arr1[$i] = NULL;
-                            $arr2[$j] = NULL;
-                            $dis++;
-                            break;
-                        }
-                    }
-                }
-            }
-            return $dis;
-        }
+                <footer>
+                    <button id="haga" type="submit" class="button">Send request</button>
+                    <div class="progress"></div>
+                </footer>				
+                <div class="message">
+                    <i class="fa fa-check"></i>
+                    <p>Thanks for your data!<br><a href="phpSueltos.php">We'll give you results very soon.<br></a></p>
+                </div>
+            </form>			
+        </div>        
 
-        $str1 = "boat";
-        $str2 = "goat";
-        $arr1 = str_split($str1);
-        $arr2 = str_split($str2);
-//var_dump($arr3, $arr2, $arr1); 
-        $val = distancia($arr1, $arr2);
-        echo 'Resultado ' . ++$val;
-        ?>
         <hr>
+        <script src="https://use.fontawesome.com/3b0b538fb9.js"></script>
         <!-- Latest compiled and minified JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>        
+        <script src="../public/js/jquery.form.min.js"></script>  
+        <script src="../public/js/jquery.maskedinput.min.js"></script>  
+        <script src="../public/js/jquery.modal.js"></script>  
+        <script src="../public/js/jquery.validate.min.js"></script>  
+        <!--[if lt IE 10]>
+                <script src="../public/js/jquery.placeholder.min.js"></script>
+        <![endif]-->		
+        <!--[if lt IE 9]>
+                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+                <script src="../public/js/sky-forms-ie8.js"></script>
+        <![endif]-->        
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+        <script src="../public/js/juegaJQ.js"></script>      
     </body>
 </html>

@@ -48,6 +48,11 @@
             </div>            
         </div>
         <div class="container">
+            <?php
+            var_dump($_POST);
+            ?>
+        </div>
+        <div class="container">
             <div class="row">
                 <div class="col-md-4">
                     <h2 class="bg-info">Equilibrio</h2>
@@ -56,7 +61,6 @@
                     echo '<p class="text-danger">$array1 = array(-7, 1, 5, 6, 2, -4, 5, 4, 0);</p>';
                     echo '<p class="text-primary">
                     function equilibrio($array1) {<br>
-
                     for ($i = 0;<br>
                     $i < count($array1);<br>
                     $i++) {<br>
@@ -178,7 +182,7 @@ echo "RESULTADO " . $a[0];<br>';
 
                 </div>
                 <div class="col-md-4">
-                    <h2 class="bg-info">Compare strings</h2>
+                    <h2 class="bg-info">Compare strings or elements</h2>
                     <p>The result will be a integer, an element value, a percent, or a new object.
                         <strong class="bg-info">BASED ON ALGEBRA OF SETS </strong>Union of sets means adding two sets. Let us consider two sets A and B, then the union 
                     of sets is represented by A U B, which means all the elements, which either belong to A or B.
