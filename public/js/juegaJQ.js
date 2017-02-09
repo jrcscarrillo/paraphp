@@ -46,20 +46,21 @@ $(function () {
           {
               form_dato1:
                 {
-                    required: 'Please enter your name'
+                  required: 'Please enter a valid data',
+                  minlength: 'The string at least must have 3 characters'
                 },
               form_dato2:
                 {
-                    required: 'Please enter your email address',
-                    email: 'Please enter a VALID email address'
+                    required: 'Please enter a valid data',
+                    minlength: 'The string at least must have 3 characters'
                 },
               form_option:
                 {
-                    required: 'Please enter your phone number'
+                    required: 'Please you must choose one option from list'
                 },
               form_filter:
                 {
-                    required: 'Please select your budget'
+                    required: 'Please you must choose one option from list'
                 }
           },
 

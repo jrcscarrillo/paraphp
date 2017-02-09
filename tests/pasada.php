@@ -111,6 +111,6 @@
                 <script src="../public/js/sky-forms-ie8.js"></script>
         <![endif]-->        
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script src="../public/js/juegaJQ.js"></script>      
+        <script src="../public/js/pasada.js"></script>      
     </body>
 </html>
