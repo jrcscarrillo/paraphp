@@ -1,0 +1,3 @@
+''Wed 1 23:47:51': [DEBUG] SELECT IF(COUNT(*) > 0, 1, 0) FROM `INFORMATION_SCHEMA`.`TABLES` WHERE `TABLE_NAME`= 'users' AND `TABLE_SCHEMA` = 'knoll''
+''Wed 1 23:47:51': [DEBUG] DESCRIBE `knoll`.`users`'
+''Wed 1 23:47:51': [DEBUG] SELECT `users`.`id`, `users`.`username`, `users`.`password`, `users`.`name`, `users`.`email`, `users`.`createdAt`, `users`.`active` FROM `knoll`.`users` WHERE (`users`.`email` = :email OR `users`.`username` = :email) AND `users`.`password` = :password AND `users`.`active` = 'Y' LIMIT :APL0'
